@@ -1,0 +1,63 @@
+# 3OX.Ai Git Ignore
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist/
+build/
+*.exe
+*.dll
+
+# Personal/sensitive
+*.key
+*.pem
+.env
+secrets/
+
+# Large binaries (use pCloud for these)
+*.pdf
+*.zip
+*.jpg
+*.png
+*.mp4
+*.mov
+
+# CRITICAL: DO NOT IGNORE .3ox FILES
+# These MUST be in Git for version control
+!**/.3ox/
+!**/.3ox.*
+!**/PROJECT.BRAIN.md
+!**/*.3ox
+
+# CRITICAL: DO sync these
+!.cursorrules
+!3OX.Ai/
+!**/*.md
+!**/*.yaml
+!**/*.rs
+!**/*.py
+
