@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
-# ///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-# ▛//▞▞ ⟦⎊⟧ :: ⧗-25.61 // RUNTIME.RB ▞▞
-# Dynamic Orchestration - Atomic .3ox Structure
-# ///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+#///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+#▛▞▞ ⟦⎊⟧ :: ⧗-25.61 ▸ ρ{runtime.flow}.φ{orchestrate}.τ{session}.λ{bind} ⫸ :: RUNTIME.RB
 
 require 'yaml'
 require 'digest'
@@ -253,7 +251,5 @@ if __FILE__ == $0
   puts "\n✅ Runtime test complete! Check .3ox/ for logs."
 end
 
-# ///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-# Template v1.0.0 | Sirius ⧗-25.61
-# ///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+#///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂ v1.0.0 | ⧗-25.61 ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂#///
 

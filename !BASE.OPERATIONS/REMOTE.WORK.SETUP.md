@@ -198,3 +198,4 @@ pythonw watch_telegram_queue.py
 **Bottom line:** You can work remotely RIGHT NOW if pCloud is synced! Just open the CMD.BRIDGE folder on another device. Everything else is "nice to have" enhancements.
 
 
+

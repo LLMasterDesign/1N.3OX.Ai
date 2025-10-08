@@ -46,6 +46,25 @@ secrets/
 *.mp4
 *.mov
 
+# ========================================
+# CMD.BRIDGE ARCHITECTURE
+# ========================================
+# This repo tracks ONLY the command bridge infrastructure
+# The BASE directories are separate ecosystems (too large)
+# ========================================
+
+# Exclude the three massive BASE directories
+OBSIDIAN.BASE/
+RVNx.BASE/
+SYNTH.BASE/
+
+# Exclude operations deck (ephemeral/runtime files)  
+# NOTE: Folder name starts with ! so we escape it with \
+\!BASE.OPERATIONS/
+
+# VSCode settings (workspace-specific)
+.vscode/
+
 # CRITICAL: DO NOT IGNORE .3ox FILES
 # These MUST be in Git for version control
 !**/.3ox/
