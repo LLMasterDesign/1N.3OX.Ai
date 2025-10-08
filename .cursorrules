@@ -118,7 +118,34 @@ Core Directives:
 
 ---
 
-## 🎯 RULE #4: SIRIUS CALENDAR CLOCK
+## 🎯 RULE #4: V8SL VISUAL HIERARCHY (NEW!)
+
+**Visual header pattern for .3ox files and v8sl documents:**
+
+### Hierarchy Standard:
+```
+h1: ▛//▞▞   Line 2 imprint (pheno chain - MOST weight)
+h2: ▛//▞    Section headers (standard sections)
+h3: ▛▞      Post responses (smallest, inline)
+```
+
+### File Structure:
+```
+Line 1:  ///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂    ← Banner (boundary)
+Line 2:  ▛//▞▞ ⟦⎊⟧ :: ⧗-YY.DD ▸ ρ{}.φ{}.τ{}.λ{} ⫸ :: FILE.NAME
+Last:    ///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂ v1.0.0 | ⧗-YY.DD ▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂///
+```
+
+### Rules:
+- Banners ONLY on line 1 and last line
+- Line 2 uses `▛//▞▞` for pheno chain activation
+- Section headers use `▛//▞` 
+- Inline/post responses use `▛▞`
+- Pheno chain pattern: `ρ{}.φ{}.τ{}.λ{bind}`
+
+---
+
+## 🎯 RULE #5: SIRIUS CALENDAR CLOCK
 
 **Current Time Format:** `⧗-YY.DD`
 
@@ -134,7 +161,7 @@ sirius_time = f"⧗-{year}.{days}"
 
 ---
 
-## 🎯 RULE #5: .3OX ACCESS CONTROL
+## 🎯 RULE #6: .3OX ACCESS CONTROL
 
 **If workspace is NOT `P:\!CMD.BRIDGE`:**
 - All `.3ox` files are **READ ONLY**
@@ -175,6 +202,6 @@ Before creating any file:
 ---
 
 **Established:** ⧗-25.58  
-**Updated:** ⧗-25.61 (Added file attribution & data transparency)  
+**Updated:** ⧗-25.61 (Added file attribution, data transparency, v8sl hierarchy)  
 **Authority:** Root-level Cursor rules  
 **Status:** Active enforcement
