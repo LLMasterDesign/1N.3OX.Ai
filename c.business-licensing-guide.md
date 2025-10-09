@@ -2,6 +2,14 @@
 
 ## 🏢 Business Entity Formation
 
+### Pre-Revenue Option: Sole Proprietorship → LLC Conversion
+**Why Start Pre-Revenue:**
+- **User Validation First:** Build audience before monetization pressure
+- **Lower Initial Costs:** $0-100 vs $200-800 for LLC
+- **Faster Launch:** No entity formation delays
+- **Market Testing:** Validate product-market fit with real users
+- **ROI Focus:** Users = future revenue, not immediate costs
+
 ### Recommended Structure: LLC (Limited Liability Company)
 **Why LLC for 3OX.Ai:**
 - Personal liability protection
@@ -9,6 +17,19 @@
 - Flexible management structure
 - Professional credibility
 - Easy to scale and add investors
+
+### Pre-Revenue Filing Strategy
+**Phase 1: Sole Proprietorship (0-6 months)**
+- **Cost:** $0-100 (just EIN)
+- **Timeline:** Immediate
+- **Benefits:** Fastest launch, user validation, minimal overhead
+- **Risks:** Personal liability, harder to raise investment
+
+**Phase 2: LLC Conversion (6-12 months)**
+- **Trigger:** $1,000+ monthly revenue OR 100+ active users
+- **Cost:** $200-500 conversion fee
+- **Benefits:** Professional credibility, liability protection
+- **Process:** File Articles of Organization, update contracts
 
 ### Required Filings by State:
 
@@ -135,6 +156,17 @@
 
 ## 💡 Cost Summary (First Year)
 
+### Pre-Revenue Path (0-6 months)
+| Category | Low End | High End |
+|----------|---------|----------|
+| Entity Formation | $0 | $100 |
+| Legal Documents | $200 | $1,000 |
+| Accounting/Tax | $100 | $500 |
+| Trademark/IP | $0 | $500 |
+| Software/Tools | $300 | $1,200 |
+| **Total** | **$600** | **$3,300** |
+
+### Full LLC Path (Immediate)
 | Category | Low End | High End |
 |----------|---------|----------|
 | Entity Formation | $200 | $800 |
@@ -143,6 +175,19 @@
 | Trademark/IP | $500 | $2,000 |
 | Software/Tools | $600 | $2,400 |
 | **Total** | **$2,800** | **$12,200** |
+
+### ROI Analysis: Pre-Revenue vs Immediate LLC
+**Pre-Revenue Benefits:**
+- **$2,200-8,900 saved** in first 6 months
+- **Faster time to market** (no entity delays)
+- **User validation** before major investment
+- **Lower risk** if product doesn't gain traction
+
+**When to Convert to LLC:**
+- Monthly revenue > $1,000
+- Active users > 100
+- Seeking investment or partnerships
+- Legal liability concerns increase
 
 ## 🎯 Revenue Thresholds for Additional Requirements
 

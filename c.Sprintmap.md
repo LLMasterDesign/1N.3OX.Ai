@@ -5,12 +5,12 @@
 
 ## 🎯 TODO (Critical Path)
 
-### Day 1-2: Foundation & Legal
+### Day 1-2: Foundation & Legal (Pre-Revenue Path)
 - [ ] **Business Entity Formation** (Priority 1)
-  - Choose LLC structure (Delaware recommended)
-  - File Articles of Organization
-  - Obtain EIN from IRS
-  - Open business bank account
+  - Start as Sole Proprietorship (fastest launch)
+  - Obtain EIN from IRS (free, immediate)
+  - Open business bank account with EIN
+  - Plan LLC conversion triggers ($1K/month or 100+ users)
 - [ ] **Domain & Hosting Setup**
   - Configure 1N3OX.ai DNS
   - Set up 3ox.store subdomain
@@ -29,17 +29,18 @@
   - Form validation
   - CTA button tracking
 
-### Day 5-6: Backend & Payment Integration
-- [ ] **Payment Processing**
-  - Stripe integration for 3 pricing tiers
-  - Webhook handling for subscriptions
-  - Invoice generation system
-  - Refund management
-- [ ] **User Management**
+### Day 5-6: Backend & User Validation (Pre-Revenue Focus)
+- [ ] **User Management & Validation**
   - Registration/login system
   - Email verification
   - Password reset functionality
   - User dashboard basics
+  - Usage analytics tracking
+- [ ] **Free Tier Implementation**
+  - Free Box Set downloads
+  - Usage limits and tracking
+  - Waitlist for premium features
+  - User feedback collection system
 
 ### Day 7-8: Product Core Development
 - [ ] **3OX Brain System**
@@ -53,41 +54,41 @@
   - Export functionality (CSV/XLSX)
   - Version control integration
 
-### Day 9-10: Store & Distribution
+### Day 9-10: Store & Distribution (Freemium Model)
 - [ ] **3OX.store Implementation**
-  - Product catalog system
-  - Shopping cart functionality
-  - Digital delivery system
-  - License key generation
+  - Free Box Set catalog
+  - Premium Box Set previews
+  - Waitlist for paid features
+  - User-generated content system
 - [ ] **Box Set Creation Tools**
-  - 3OX.MKR basic interface
+  - 3OX.MKR basic interface (free tier)
   - Template system
   - Validation engine
-  - Publishing workflow
+  - Community sharing features
 
-### Day 11-12: Testing & Launch Prep
+### Day 11-12: Testing & Launch Prep (Pre-Revenue)
 - [ ] **Quality Assurance**
   - End-to-end testing
   - Security audit
   - Performance testing
   - User acceptance testing
 - [ ] **Launch Preparation**
-  - Legal compliance review
-  - Terms of Service finalization
+  - Basic Terms of Service (sole proprietorship)
   - Privacy Policy completion
-  - Customer support setup
+  - Community support setup (Discord/Telegram)
+  - Analytics and tracking implementation
 
-### Day 13: Launch & Monitor
+### Day 13: Launch & Monitor (User-First Launch)
 - [ ] **Go Live**
   - DNS cutover
-  - Payment processing activation
+  - Free tier activation
   - User onboarding flow
   - Real-time monitoring
 - [ ] **Post-Launch**
   - User feedback collection
-  - Performance monitoring
-  - Bug tracking and fixes
-  - Success metrics analysis
+  - Usage analytics monitoring
+  - Community engagement tracking
+  - Conversion funnel analysis
 
 ---
 
@@ -173,11 +174,12 @@
 
 ## 📊 Success Metrics
 
-### Launch Targets (Day 13)
+### Launch Targets (Day 13) - Pre-Revenue Focus
 - **Website Performance:** <3s load time, 99.9% uptime
-- **Payment Success Rate:** >95%
-- **User Registration:** 50+ beta users
-- **Revenue:** $1,000+ in first week
+- **User Registration:** 100+ beta users
+- **Box Set Downloads:** 50+ free downloads
+- **Community Engagement:** 20+ Discord/Telegram members
+- **User Feedback:** 10+ detailed feedback responses
 
 ### 30-Day Goals
 - **Active Users:** 500+
