@@ -24,6 +24,32 @@ from pathlib import Path
 # Core Functions
 # ============================================================================
 
+def check_core_files():
+    """Ensure critical .3ox files exist before running"""
+    required_files = [
+        'brain.rs',
+        'routes.json',
+        'tools.yml',
+        'limits.toml'
+    ]
+    
+    missing = []
+    for file in required_files:
+        if not Path(file).exists():
+            missing.append(file)
+    
+    if missing:
+        print("⚠️  CRITICAL: Missing .3ox core files!")
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        for file in missing:
+            print(f"  ✗ {file}")
+        print("\nCannot proceed without core files.")
+        print("Restore from backup or reinstall .3ox runtime.")
+        print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+        sys.exit(1)
+    
+    return True
+
 def validate_file(filepath):
     """Check if file exists and get hash"""
     p = Path(filepath)
@@ -232,6 +258,10 @@ def run_batch(operations):
 
 if __name__ == "__main__":
     import sys
+    
+    # Pre-flight check - ensure core files exist
+    check_core_files()
+    
     if len(sys.argv) > 2:
         # Batch mode: multiple operations
         run_batch(sys.argv[1:])

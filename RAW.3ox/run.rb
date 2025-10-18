@@ -348,7 +348,10 @@ def run_batch(operations)
 end
 
 if __FILE__ == $0
-  # Check activation key FIRST
+  # Pre-flight check - ensure core files exist
+  check_core_files
+  
+  # Check activation key
   check_activation_key
   
   if ARGV.length > 1
