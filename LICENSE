@@ -1,0 +1,139 @@
+# 3OX.AI COMMERCIAL LICENSE
+**Version:** v1.1.0  
+**Effective Date:** October 18, 2025
+
+---
+
+## Copyright Notice
+
+Copyright © 2025 3OX.AI. All rights reserved.
+
+---
+
+## Grant of License
+
+This software (CORE.3ox) is commercial software. By obtaining a valid license key, you are granted a non-exclusive, non-transferable, machine-specific license to use this software on a single computer.
+
+### Permitted Use:
+- ✅ Use on ONE machine (identified by machine ID in license key)
+- ✅ Create backups for disaster recovery
+- ✅ Use for personal or commercial projects
+- ✅ Integrate into automated workflows
+
+### Prohibited Use:
+- ❌ Sharing license keys with others
+- ❌ Using on multiple machines (without multi-machine license)
+- ❌ Reverse engineering or decompiling
+- ❌ Removing or modifying license checks
+- ❌ Redistributing this software
+- ❌ Creating derivative works for distribution
+
+---
+
+## Evaluation License
+
+You may generate a trial license key for evaluation purposes:
+
+```bash
+ruby .3ox/generate_key.rb --trial
+```
+
+Trial keys expire after 7 days and are for evaluation only.
+
+---
+
+## Commercial Licensing
+
+**Single Machine License:** $299 USD one-time  
+**Multi-Machine License:** Custom pricing (contact sales@3ox.ai)  
+**Enterprise License:** Unlimited machines (contact sales@3ox.ai)
+
+All licenses include:
+- Lifetime updates
+- Technical support via email
+- Compliance documentation
+- Custom key generation
+
+---
+
+## Machine Binding
+
+License keys are cryptographically bound to:
+- Computer hostname
+- Username
+- Operating system
+
+**Keys are non-transferable.** For machine transfers or upgrades, contact license@3ox.ai.
+
+---
+
+## Compliance & Security
+
+This software is designed for:
+- HIPAA compliance (healthcare)
+- GDPR compliance (EU privacy)
+- SOC 2 audit support
+- Air-gapped/offline environments
+
+**No telemetry, no network calls, no data collection.**
+
+---
+
+## Warranty Disclaimer
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+## Limitation of Liability
+
+IN NO EVENT SHALL 3OX.AI BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE.
+
+---
+
+## Termination
+
+Your license automatically terminates if you:
+- Violate any terms of this license
+- Share your license key
+- Attempt to circumvent license checks
+- Use the software on unauthorized machines
+
+Upon termination, you must destroy all copies of the software.
+
+---
+
+## Governing Law
+
+This license shall be governed by and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.
+
+---
+
+## Contact
+
+**Sales & Licensing:** sales@3ox.ai  
+**Technical Support:** support@3ox.ai  
+**License Transfers:** license@3ox.ai  
+**Website:** https://3ox.store
+
+---
+
+## Source Code
+
+Portions of this software are open source (brain.rs, configuration files). The runtime (run.rb) and licensing system are proprietary.
+
+**Open source components retain their original licenses.**
+
+---
+
+**For questions about this license, contact:** legal@3ox.ai
+
+---
+
+Copyright © 2025 3OX.AI  
+All rights reserved.
+
+:: ∎
+
