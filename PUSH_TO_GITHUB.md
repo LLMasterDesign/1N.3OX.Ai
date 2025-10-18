@@ -46,22 +46,28 @@ Replace `YOUR_USERNAME` with your GitHub username.
 ├── README.md              ← Repo overview
 ├── LICENSE                ← Commercial license
 ├── .gitignore             ← Protects keys/logs
-└── CORE.3ox/              ← Full product
-    ├── README.md
-    ├── LEXICON.md
-    ├── EXAMPLES.md
-    ├── COMPLIANCE.md
-    └── .3ox/
-        ├── run.rb         ← Runtime
-        ├── brain.rs       ← Agent config
-        ├── brain.exe      ← Compiled brain
-        ├── tools.yml
-        ├── routes.json
-        ├── limits.json
-        └── generate_key.rb
+├── CORE.3ox/              ← Python version (testing)
+│   ├── README.md          ← Python docs
+│   ├── run.py             ← Python runtime
+│   ├── brain.rs           ← Agent config
+│   ├── tools.yml
+│   ├── routes.json
+│   └── limits.toml
+└── RAW.3ox/               ← Ruby version (commercial OG)
+    ├── README.md          ← Ruby docs
+    ├── run.rb             ← Ruby runtime 🔥
+    ├── brain.rs           ← Agent config (Rust)
+    ├── brain.exe          ← Compiled brain ⚡
+    ├── Cargo.toml
+    ├── tools.yml
+    ├── routes.json
+    ├── limits.json
+    ├── generate_key.rb    ← Key generator 🔑
+    ├── surgical_edit.rb   ← Surgical editing
+    └── compliance_test.rb ← Compliance testing
 ```
 
-**Total:** 15 files, 1,764 lines
+**Total:** 2 runtimes, both versions available
 
 ---
 

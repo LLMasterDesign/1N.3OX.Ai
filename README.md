@@ -32,47 +32,43 @@ cd 1n3ox/CORE.3ox
 
 ### 2. Requirements
 
-- Ruby 3.2+ ([Download](https://www.ruby-lang.org/en/downloads/))
-- xxhash gem: `gem install xxhash`
+- Python 3.8+ ([Download](https://www.python.org/downloads/))
+- Dependencies: `pip install xxhash toml pyyaml tiktoken`
 
-### 3. Generate License Key
-
-```bash
-ruby .3ox/generate_key.rb
-```
-
-This creates `3ox.key` bound to your machine.
-
-### 4. Run Operations
+### 3. Run Operations
 
 **Single operation:**
 ```bash
-ruby .3ox/run.rb knowledge_update
+python CORE.3ox/run.py knowledge_update
 ```
 
-**Batch operations (FAST):**
+**Batch operations:**
 ```bash
-ruby .3ox/run.rb critical_error deploy_ready sync_request
+python CORE.3ox/run.py critical_error deploy_ready sync_request
 ```
+
+**Note:** This is the Python version - ideal for testing and development. For production/commercial use with licensing, see **RAW.3ox** (Ruby version).
 
 ---
 
 ## What's Included
 
 ```
-CORE.3ox/
-├── README.md          - Product documentation
-├── LEXICON.md         - Terminology guide
-├── EXAMPLES.md        - Usage examples
-├── COMPLIANCE.md      - Privacy & regulatory docs
-└── .3ox/              - Runtime folder
-    ├── run.rb         - Main runtime
-    ├── brain.rs       - Agent configuration (Rust)
-    ├── brain.exe      - Compiled brain binary
-    ├── tools.yml      - Tool registry
-    ├── routes.json    - Routing configuration
-    ├── limits.json    - Resource constraints
-    └── generate_key.rb - License key generator
+CORE.3ox/               - Python version (testing/dev)
+├── run.py             - Main runtime (Python)
+├── brain.rs           - Agent configuration
+├── tools.yml          - Tool registry
+├── routes.json        - Routing configuration
+└── limits.toml        - Resource constraints
+
+RAW.3ox/                - Ruby version (commercial/OG)
+├── run.rb             - Main runtime (Ruby)
+├── brain.rs           - Agent configuration (Rust)
+├── brain.exe          - Compiled brain binary
+├── tools.yml          - Tool registry
+├── routes.json        - Routing configuration
+├── limits.json        - Resource constraints
+└── generate_key.rb    - License key generator
 ```
 
 ---
@@ -170,10 +166,13 @@ This repository contains the CORE.3ox base product. Other industry-specific vari
 
 ## Technical Details
 
-**Runtime:** Ruby 3.2+  
-**Brain:** Rust (compiled to binary)  
+**Main Runtime:** Python 3.8+ (testing/development)  
+**Commercial Runtime:** Ruby 3.2+ (production/licensed)  
+**Brain:** Rust (compiled to binary in RAW.3ox)  
 **Hashing:** xxHash64 for speed  
-**Performance:** 2.2 seconds for 10 operations (batch mode)
+**Performance:** 
+- Python: ~2.6 seconds for 10 operations
+- Ruby (RAW.3ox): ~2.2 seconds for 10 operations (faster!)
 
 **Architecture:**
 - Sentinel brain (Guardian-Synchronizer)

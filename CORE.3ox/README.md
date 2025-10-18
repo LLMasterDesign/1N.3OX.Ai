@@ -1,14 +1,36 @@
-# CORE.3ox - General Purpose AI Agent
-**Product:** Core  
+# CORE.3ox - Python Runtime (Testing & Development)
 **Version:** v1.1.0  
-**Price:** $299 one-time  
-**License:** Single machine, lifetime
+**Runtime:** Python 3.8+  
+**Purpose:** Development, testing, and user-friendly operations
 
 ---
 
 ## What is CORE.3ox?
 
-A self-contained, offline AI agent for general file operations, validation, and automation. Perfect for developers, small businesses, and anyone needing controlled AI without cloud dependencies.
+The **Python implementation** of the .3ox agent runtime. Perfect for:
+- ✅ **Testing and development** - Fast iteration, easy debugging
+- ✅ **Learning the system** - Readable code, clear structure
+- ✅ **Cross-platform** - Works everywhere Python works
+- ✅ **No compilation** - Just run it
+
+**For production/commercial use with licensing:** See `RAW.3ox` (Ruby version)
+
+---
+
+## Installation
+
+### 1. Install Python
+Download from [python.org](https://www.python.org/downloads/) (3.8 or higher)
+
+### 2. Install Dependencies
+```bash
+pip install xxhash toml pyyaml tiktoken
+```
+
+### 3. Run It
+```bash
+python run.py knowledge_update
+```
 
 ---
 
@@ -21,95 +43,130 @@ A self-contained, offline AI agent for general file operations, validation, and 
 
 ✅ **Routing System**
 - Auto-route files to destinations
-- Custom routing rules
-- Batch operations support
+- Custom routing rules via `routes.json`
 
 ✅ **Resource Management**
-- File size limits enforcement
-- Operation constraints
-- Token/cost tracking
+- File size limits enforcement (`limits.toml`)
+- Token/cost tracking with `tiktoken`
 
 ✅ **Security**
 - 100% offline operation
 - No data sent to cloud
-- Machine-bound licensing
 - Cryptographic audit trail
 
 ---
 
-## Installation
+## Files Included
 
-1. Extract `CORE.3ox` folder
-2. Place `3ox.key` (provided after purchase) in `.3ox/` folder
-3. Ensure Ruby 3.2+ installed
-4. Run: `ruby .3ox/run.rb [operation]`
+```
+CORE.3ox/
+├── run.py           ← Main runtime (Python)
+├── brain.rs         ← Agent configuration
+├── tools.yml        ← Tool registry
+├── routes.json      ← Routing configuration
+├── limits.toml      ← Resource constraints
+├── 3ox.log          ← Operation logs
+└── !KEY             ← Agent identity
+```
 
 ---
 
-## Usage
+## Usage Examples
 
 **Single operation:**
 ```bash
-ruby .3ox/run.rb validate_files
+python run.py knowledge_update
 ```
 
-**Batch operations (FAST):**
+**Batch operations:**
 ```bash
-ruby .3ox/run.rb critical_error deploy_ready sync_request
+python run.py critical_error deploy_ready sync_request
+```
+
+**With custom file:**
+```bash
+python run.py validate_files --file=myfile.txt
 ```
 
 ---
 
-## What's Included
+## Configuration
 
-**Core Runtime (`.3ox/` folder):**
-- `run.rb` - Main runtime (IGNITION)
-- `brain.rs` - Agent configuration
-- `brain.exe` - Compiled brain binary
-- `tools.yml` - Tool registry
-- `routes.json` - Routing configuration
-- `limits.json` - Resource constraints
-- `3ox.log` - Operations log
-- `3ox.key` - Activation key (YOU PROVIDE THIS)
+### routes.json
+Define where outputs go:
+```json
+{
+  "routes": {
+    "knowledge_update": "OBSIDIAN.BASE",
+    "critical_error": "CMD.BRIDGE",
+    "deploy_ready": "SYNTH.BASE"
+  }
+}
+```
 
-**Supporting Documentation:**
-- `README.md` - This file
-- `LEXICON.md` - Terminology guide
-- `EXAMPLES.md` - Usage examples
-- `COMPLIANCE.md` - Privacy & security documentation
+### limits.toml
+Set resource constraints:
+```toml
+[files]
+max_size = 10485760  # 10MB
+
+[tokens.models.claude_sonnet_4]
+context = 200000
+cost_per_million = 3.00
+```
+
+### tools.yml
+Available operations:
+```yaml
+tools:
+  - name: file_validation
+    description: Validate file integrity
+    enabled: true
+```
 
 ---
 
-## System Requirements
+## Differences from RAW.3ox (Ruby)
 
-- **OS:** Windows 10+, macOS 10.15+, Linux
-- **Ruby:** 3.2 or higher
-- **Dependencies:** xxhash gem (auto-installed)
-- **Disk:** 10 MB minimum
-- **Internet:** NOT required (offline capable)
+| Feature | CORE.3ox (Python) | RAW.3ox (Ruby) |
+|---------|------------------|----------------|
+| **Speed** | ~2.6s for 10 ops | ~2.2s for 10 ops ⚡ |
+| **Licensing** | None (open) | Machine-bound 🔒 |
+| **Compilation** | No | Yes (Rust brain) |
+| **Best for** | Testing, dev | Production, commercial |
+| **Dependencies** | pip install | gem install |
+| **Config format** | TOML, YML | JSON, YML |
+
+---
+
+## When to Use This Version
+
+**Use CORE.3ox (Python) if:**
+- 🧪 Testing and development
+- 📚 Learning the .3ox system
+- 🔧 Rapid prototyping
+- 🐍 Python-first environment
+- 🆓 No licensing needed
+
+**Use RAW.3ox (Ruby) if:**
+- 🏭 Production deployment
+- 💼 Commercial application
+- 🔒 Need machine-bound licensing
+- ⚡ Need maximum speed
+- 🛡️ Regulatory compliance (HIPAA/GDPR)
 
 ---
 
 ## Support
 
-- **Email:** support@3ox.ai
-- **Documentation:** 3ox.store/docs
-- **License transfers:** license@3ox.ai
+- **Issues:** Use GitHub Issues
+- **Docs:** See main README.md
+- **Commercial:** For RAW.3ox, contact sales@3ox.ai
 
 ---
 
-## License
-
-This software is licensed to the machine specified in your 3ox.key file. Unauthorized copying, sharing, or modification is prohibited and will result in license revocation.
-
-**Machine ID:** [Shown on first run]  
-**Expires:** Lifetime (perpetual license)  
-**Transferable:** Contact license@3ox.ai
-
----
-
-**Status:** PRODUCTION READY  
-**Build:** v1.1.0 | ⧗-25.291
+**Version:** v1.1.0 | Python Runtime  
+**Build:** ⧗-25.291
 
 :: ∎
 
