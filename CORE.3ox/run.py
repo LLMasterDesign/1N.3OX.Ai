@@ -4,6 +4,15 @@ RUN.PY :: .3OX Runtime for API Calls
 Minimal test implementation
 """
 
+import sys
+import os
+
+# Fix UTF-8 output on Windows
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding='utf-8', errors='replace')
+
 import xxhash
 import json
 import yaml

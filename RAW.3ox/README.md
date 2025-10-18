@@ -2,7 +2,21 @@
 **Version:** v1.1.0  
 **Runtime:** Ruby 3.2+  
 **Purpose:** Production, commercial, high-compliance operations  
-**License:** Commercial - Machine-bound
+**License:** Commercial - Machine-bound  
+**⚠️ LICENSE KEY REQUIRED** - See `LICENSE_REQUIRED.md` for details
+
+---
+
+## ⚠️ Downloaded from GitHub?
+
+**You will need a license key to run this.** Key generation is vendor-only for anti-piracy. 
+
+**Options:**
+1. **Purchase:** Contact sales@3ox.ai ($299-$1,499)
+2. **Trial:** Request 7-day key from sales@3ox.ai
+3. **Free Version:** Use CORE.3ox (Python) for testing
+
+**See:** `LICENSE_REQUIRED.md` for full details
 
 ---
 
