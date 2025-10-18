@@ -63,12 +63,24 @@ winget install RubyInstallerTeam.RubyWithDevKit.3.2
 gem install xxhash
 ```
 
-### 3. Generate License Key
-```bash
-ruby generate_key.rb
+### 3. Obtain Your License Key
+
+**⚠️ You should have received a `3ox.key` file after purchase.**
+
+**Place it in the RAW.3ox folder:**
+```
+RAW.3ox/
+├── run.rb
+├── 3ox.key  ← YOUR LICENSE KEY HERE
+└── ... other files
 ```
 
-This creates `3ox.key` bound to YOUR machine.
+**Don't have a key?**
+- Purchase: sales@3ox.ai ($299-$1,499)
+- Trial: sales@3ox.ai (7-day evaluation)
+- Lost key: license@3ox.ai (include invoice)
+
+**Note:** Keys cannot be self-generated (vendor-only for anti-piracy).
 
 ### 4. Run It
 ```bash
@@ -88,7 +100,7 @@ RAW.3ox/
 ├── tools.yml          ← Tool registry
 ├── routes.json        ← Routing configuration
 ├── limits.json        ← Resource constraints
-├── generate_key.rb    ← License key generator 🔑
+├── 3ox.key            ← License key (YOU PROVIDE) 🔑
 ├── surgical_edit.rb   ← Surgical file editing
 ├── compliance_test.rb ← Offline compliance test
 └── 3ox.log            ← Operation logs
