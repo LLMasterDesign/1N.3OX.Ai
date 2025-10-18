@@ -191,10 +191,11 @@ ruby run.rb op1 op2 op3
 
 **Includes:**
 - Lifetime updates
-- Technical support
+- Technical support (email, 24hr)
 - Compliance documentation
-- Custom key generation
+- Vendor-issued license key (machine-bound)
 - Surgical editing tools
+- 1 free machine transfer per year
 
 **Contact:** sales@3ox.ai
 
