@@ -50,7 +50,8 @@ A **layered, event-driven AI agent system** with clear separation of concerns:
 - Station availability tracking
 - Nested: 0ut3ox (receipts, logs, requests)
 
-**Usage:** ONE per ops/base (singleton pattern)
+**Usage:** ONE per ops/base (singleton pattern)  
+**Status:** Ready for implementation
 
 ### Branch: `cat3ox`
 **Category Middleware**
@@ -59,7 +60,8 @@ A **layered, event-driven AI agent system** with clear separation of concerns:
 - Half persona, half routing
 - Has own 1n3ox (no 0ut3ox)
 
-**Usage:** Orchestrates between input and runtime
+**Usage:** Orchestrates between input and runtime  
+**Status:** Ready for implementation
 
 ### Branch: `core-runtime`
 **.3ox Agent Runtime**
@@ -67,7 +69,18 @@ A **layered, event-driven AI agent system** with clear separation of concerns:
 - RAW.3ox (Ruby) - Commercial with licensing
 - Pre-flight checks, validation, compliance
 
-**Usage:** The actual agent execution layer
+**Usage:** The actual agent execution layer  
+**Status:** ✅ Production ready
+
+### Branch: `3ox-sets`
+**SaaS Platform**
+- Next.js web application
+- Landing page, pricing, features
+- User authentication
+- Business/monetization strategy
+
+**Usage:** Web interface for 3OX products  
+**Status:** ✅ Platform ready
 
 ### Branch: `experiments`
 **Testing & Experiments**
@@ -75,6 +88,9 @@ A **layered, event-driven AI agent system** with clear separation of concerns:
 - Performance testing
 - Feature experiments
 - Not production code
+
+**Usage:** R&D and validation  
+**Status:** Open for experiments
 
 ---
 
@@ -88,14 +104,18 @@ cd 1N.3OX.Ai
 
 # Setup each layer
 git checkout 1n3ox         # Input/output layer
-git checkout cat3ox        # Middleware
+git checkout cat3ox        # Middleware  
 git checkout core-runtime  # Agent runtime
+git checkout 3ox-sets      # SaaS platform
 ```
 
 ### Get Just What You Need
 ```bash
 # Just the runtime (most common)
 git clone -b core-runtime https://github.com/LLMasterDesign/1N.3OX.Ai.git
+
+# Just the SaaS platform
+git clone -b 3ox-sets https://github.com/LLMasterDesign/1N.3OX.Ai.git
 
 # Just input layer
 git clone -b 1n3ox https://github.com/LLMasterDesign/1N.3OX.Ai.git
