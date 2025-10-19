@@ -1,7 +1,7 @@
 ///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
 ▛//▞▞ ⟦⎊⟧ :: ⧗-25.61 // CAT.3OX.README ▞▞
 //▞ Product.Readme :: ρ{cat.3oxset}.φ{PRODUCT}.τ{Overview}.λ{intro} ⫸
-▙⌱[📁] ≔ [⊢{organize}⇨{route}⟿{track}▷{archive}]
+⌱[📁] ≔ [⊢{organize}⇨{route}⟿{track}▷{archive}]
 〔3ox.sets.cat.3ox.readme〕 :: ∎
 
 # 📁 CAT.3OX - Personal Life Substrate
