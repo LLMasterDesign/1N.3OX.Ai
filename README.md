@@ -1,146 +1,301 @@
-///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
-▛//▞▞ ⟦⎊⟧ :: ⧗-25.61 // CAT.3OX.README ▞▞
-//▞ Product.Readme :: ρ{cat.3oxset}.φ{PRODUCT}.τ{Overview}.λ{intro} ⫸
-⌱[📁] ≔ [⊢{organize}⇨{route}⟿{track}▷{archive}]
-〔3ox.sets.cat.3ox.readme〕 :: ∎
+# CAT.3OX - Personal File Organization System
 
-# 📁 CAT.3OX - Personal Life Substrate
+**A proven file organization framework for managing your digital life**
 
-**Product Type:** 3oxset  
-**Version:** 1.0  
-**Status:** 🟡 AWAITING FINAL DELIVERY  
-**Store:** 3ox.store (launching soon)
+Version: 1.0  
+Runtime: Ruby (RAW) or Python (CORE)
 
 ---
 
-## 🎯 WHAT IS CAT.3OX?
+## What Is This?
 
-**CAT.3OX** is a proven personal organization system that brings order to digital chaos. After 15+ years of real-world use, it's the battle-tested substrate for managing your entire digital life.
+CAT.3OX is a **file organization system** that automatically categorizes and tracks your files across 5 life domains. Drop files in category inboxes, and the system validates, logs, and routes them automatically.
 
-**The Promise:**
-> "Every item has a home. Every action leaves a receipt. Nothing gets lost."
+Think of it as a **smart filing cabinet** with automatic tracking.
 
 ---
 
-## 📦 WHAT YOU GET
+## How It Works
 
-### The 5 Life Domains (CAT.1-5)
+### The Basic Flow
 
-Your life, organized:
-
-- **(CAT.1) Self** - Personal development, health tracking, self-assessment
-- **(CAT.2) Education** - Courses, learning, knowledge building
-- **(CAT.3) Business** - Work projects, business docs, professional life
-- **(CAT.4) Family** - Photos, calendar events, important family docs
-- **(CAT.5) Social** - Resumes, volunteer work, social connections
-
-**Each category has:**
 ```
-(CAT.X) Name/
-├── 1N.3OX/        ← Drop files here
-└── .3ox/          ← Runtime processes them
-    ├── CORE/ or RAW/ runtime
-    └── 0UT.3OX/   ← Receipts & logs
+1. You drop a file → (CAT.X) Category/1N.3OX/
+2. Runtime processes it → .3ox/ validates & logs
+3. Tracking happens → Shared output folder gets logs
+4. You find it easily → Everything has a hash & timestamp
 ```
 
----
+### What Makes It Different
 
-### The Grand Finale: (CAT.0) ADMIN
-
-**The Master Orchestrator**
-
-This is special:
-- 🚫 **NO 1N.3OX** (nothing comes in from outside)
-- 🎭 **Master .3ox runtime** lives here
-- 🎼 **Conducts the symphony** of all other categories
-- 📊 **All receipts collect** here (central logging)
-- 🔒 **Secret operations** happen here
-- ⚙️ **The backend** for your entire system
-
-**CAT.0 ADMIN is where the AI agent lives and orchestrates everything.**
+- **No manual filing** - Drop files in the right category inbox and you're done
+- **Automatic validation** - Every file gets a cryptographic hash for integrity
+- **Centralized logging** - All activity logs to one place (3ox.log)
+- **Simple structure** - Only 3 folders per category (inbox, runtime, logs)
 
 ---
 
-### Want More Categories?
+## File Structure
 
-Use **3oxmaker.ps1** to create perfectly formatted categories:
+### What You Actually Get
 
-```powershell
-.\3oxmaker.ps1 -Number 6 -Name "Projects" -Domain "Side projects and experiments"
-.\3oxmaker.ps1 -Number 7 -Name "Archive" -Domain "Long-term storage"
+```
+Your Workspace/
+├── (CAT.1) Self/           ← Personal development files
+│   ├── 1N.3OX/            ← Drop files here
+│   └── .3ox/              ← Runtime (don't touch)
+│
+├── (CAT.2) Education/      ← Learning materials
+│   ├── 1N.3OX/
+│   └── .3ox/
+│
+├── (CAT.3) Business/       ← Work documents
+│   ├── 1N.3OX/
+│   └── .3ox/
+│
+├── (CAT.4) Family/         ← Photos, events, documents
+│   ├── 1N.3OX/
+│   └── .3ox/
+│
+├── (CAT.5) Social/         ← Resumes, volunteer work
+│   ├── 1N.3OX/
+│   └── .3ox/
+│
+└── !0UT.3OX/              ← Shared output (all logs go here)
+    └── 3ox.log            ← Central activity log
 ```
 
-**Infinite expandability.** Add as many as you need.
+### The 5 Life Categories
+
+- **(CAT.1) Self** - Health tracking, personal development, self-assessment
+- **(CAT.2) Education** - Courses, certifications, learning materials
+- **(CAT.3) Business** - Work projects, business documents, contracts
+- **(CAT.4) Family** - Photos, family events, important documents
+- **(CAT.5) Social** - Resumes, volunteer work, community projects
+
+**Customize:** Add your own categories beyond the default 5.
 
 ---
 
-## 🌟 KEY FEATURES
+## Installation
 
-✅ **15+ Years Proven** - Not theory, real-world tested  
-✅ **Soft Routing** - Flexible, not rigid  
-✅ **Receipt Tracking** - Never lose anything  
-✅ **7 Life Domains** - Organize everything that matters  
-✅ **Bidirectional Sync** - Operations ↔ Archive  
+### 1. Download
 
----
+Download this repository and extract to your workspace folder.
 
-## 📂 CURRENT STATUS
+### 2. Run Setup
 
-**Development Status:** 🟡 IN REVIEW
+```bash
+cd CAT.3OX
+python setup.py
+```
 
-**Deliverables Status:**
-- ✅ System Architecture (619 lines) - Complete
-- ✅ Quick Reference (287 lines) - Complete  
-- ✅ Routing Examples (445 lines) - Complete
-- ✅ Sales Sheet (523 lines) - Complete
+This creates:
+- 5 life domain categories (CAT.1-5)
+- 1 master orchestrator (CAT.0 ADMIN)
+- Shared output folder
 
-**Location:** `!3OX.OPS/CAT.BUILDER/0UT.3OX/`
+### 3. Choose Runtime
 
-**Next Step:** CMD.BRIDGE review → Move to this folder when approved
+**Option A: CORE (Python - Free)**
+```bash
+# Copy CORE runtime to each category
+cp -r CORE/* "(CAT.1) Self/.3ox/"
+cp -r CORE/* "(CAT.2) Education/.3ox/"
+# ... repeat for all categories
 
----
+# Install dependencies
+pip install xxhash pyyaml
+```
 
-## 📚 DOCUMENTATION
+**Option B: RAW (Ruby - Requires License)**
+```bash
+# Copy RAW runtime to each category
+cp -r RAW/* "(CAT.1) Self/.3ox/"
+cp -r RAW/* "(CAT.2) Education/.3ox/"
+# ... repeat for all categories
 
-When complete, this folder will contain:
+# Install dependencies
+gem install xxhash
 
-- `CAT.3OX.SYSTEM.ARCHITECTURE.md` - Complete system spec
-- `CAT.3OX.QUICK.REFERENCE.md` - Fast lookup guide
-- `CAT.3OX.ROUTING.EXAMPLES.md` - Real-world scenarios
-- `CAT.3OX.SALES.SHEET.md` - Marketing materials
-- `INSTALL.md` - Setup instructions
-- `TEMPLATES/` - Ready-to-use category templates
-
----
-
-## 🚀 READY FOR REVIEW
-
-**Built by:** CAT.BUILDER.STATION  
-**Session:** ses-cat-builder-20251011-001  
-**Build time:** 26 minutes  
-**Quality validation:** ✅ ALL PASSED
-
-**Awaiting:** CMD.BRIDGE approval to move from 0UT.3OX to production
-
-**Check progress:** `!3OX.OPS/CAT.BUILDER/.3ox/.3ox.log`
+# Add license key to each .3ox/ folder
+cp your-3ox.key "(CAT.1) Self/.3ox/"
+# ... repeat for all categories
+```
 
 ---
 
-## 🏪 FOR 3ox.store
+## Usage
 
-This 3oxset will be available at:
-- **Website:** 3ox.store
-- **Related:** 1n3ox.ai, 3ox.ai (future)
+### Daily Workflow
 
-**Pricing:**
-- Tier 1: $97 (one-time) or $9/month
-- Tier 2: $297 (one-time) or $24/month
+**1. Drop files in category inboxes:**
+```
+# Save a health tracking spreadsheet
+→ Save to: (CAT.1) Self/1N.3OX/
+
+# Download a course PDF
+→ Save to: (CAT.2) Education/1N.3OX/
+
+# Get a work contract
+→ Save to: (CAT.3) Business/1N.3OX/
+```
+
+**2. Runtime validates automatically:**
+- Generates cryptographic hash (xxHash64)
+- Logs operation to 3ox.log
+- Validates file integrity
+- Tracks timestamp
+
+**3. Check logs:**
+```bash
+# View all activity
+cat !0UT.3OX/3ox.log
+
+# See what was processed
+tail -20 !0UT.3OX/3ox.log
+```
+
+### What Gets Logged
+
+Every file operation logs:
+```
+[2025-10-20 18:30:45] 〘⟦⎊⟧・.°RUBY.RB〙
+  Operation: knowledge_update
+  Status: COMPLETE
+  Details: File: document.pdf, Hash: a3f8d9e2c1b5
+```
+
+**Why this matters:**
+- Find any file by hash
+- Verify file integrity
+- Track when files were added
+- Audit trail for important documents
 
 ---
 
-**Product status:** 🟡 IN DEVELOPMENT  
-**Expected completion:** Pending CMD.BRIDGE review  
-**Launch date:** TBD
+## Key Features
 
-//▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂〘・.°𝚫〙
+### ✓ File Integrity Validation
+Every file gets a cryptographic hash. Know if files have been modified.
 
+### ✓ Centralized Logging
+All categories log to one place. See your entire digital life's activity in 3ox.log.
+
+### ✓ No Receipt Spam
+Unlike typical file management systems, CAT.3OX only logs to one file. No clutter.
+
+### ✓ Flexible Categories
+Start with 5 life domains, add as many custom categories as you need.
+
+### ✓ Battle-Tested
+15+ years of real-world use in production environments.
+
+---
+
+## Technical Details
+
+### What's in .3ox/ Folder?
+
+```
+.3ox/
+├── run.rb (or run.py)     ← Main runtime
+├── brain.rs               ← Agent configuration
+├── tools.yml              ← Available operations
+├── routes.json            ← Output routing rules
+├── limits.json            ← Resource constraints
+└── 3ox.log                ← Local activity log
+```
+
+**Don't manually edit these files.** The runtime manages everything.
+
+### Activation Keys (RAW version only)
+
+The Ruby (RAW) runtime requires a license key:
+```
+3ox.key format:
+- Machine-locked (tied to your computer)
+- Cryptographically signed
+- Validates on every runtime execution
+```
+
+**CORE version:** No license required, free forever.
+
+---
+
+## Troubleshooting
+
+### "Activation key missing" error
+
+RAW runtime requires `3ox.key` in each `.3ox/` folder.
+- Use CORE runtime (Python) instead, or
+- Purchase license at 3ox.store (coming soon)
+
+### "No output folder found" warning
+
+Create shared output folder:
+```bash
+mkdir !0UT.3OX
+```
+
+### Files not being processed
+
+Check runtime:
+```bash
+cd "(CAT.1) Self/.3ox"
+ruby run.rb    # or: python run.py
+```
+
+Look for error messages in output.
+
+---
+
+## Architecture Notes
+
+### Why Two Runtimes?
+
+- **CORE (Python)** - Free, testing, personal use
+- **RAW (Ruby)** - Commercial, faster, compliance features
+
+Both do the same job. Choose based on your needs.
+
+### Why the Naming Convention?
+
+- **1N.3OX** = Inbox (files come IN)
+- **0UT.3OX** = Outbox (logs go OUT)
+- **.3ox** = Runtime (processes files)
+- **CAT** = Category (life domain)
+
+The naming makes the data flow obvious.
+
+---
+
+## Contributing
+
+This is a personal productivity system, not a collaborative platform. 
+
+Fork it, modify it, make it yours. That's the point.
+
+---
+
+## License
+
+**CORE Runtime:** MIT License (free forever)
+
+**RAW Runtime:** Commercial license required (3ox.key)
+
+---
+
+## Support
+
+Having issues? Check:
+1. Did you run `setup.py`?
+2. Is the runtime installed in each `.3ox/` folder?
+3. Does `!0UT.3OX/` folder exist?
+4. Can you run the runtime manually? (`ruby run.rb` or `python run.py`)
+
+---
+
+**Built for people who are tired of digital chaos.**
+
+**Start organizing your life today.**

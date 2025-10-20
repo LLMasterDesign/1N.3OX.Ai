@@ -270,6 +270,11 @@ def find_or_create_output_folder
   out_folders = search_patterns.flat_map { |pattern| Dir.glob(pattern, File::FNM_CASEFOLD) }.uniq
   
   if out_folders.empty?
+    # Check for !CITADEL.WORKDESK/!0UT.3OX* (shared output for CAT categories)
+    workdesk_pattern = File.join(grandparent_dir, "!CITADEL.WORKDESK", "!0UT.3OX*")
+    workdesk_folders = Dir.glob(workdesk_pattern, File::FNM_CASEFOLD)
+    return workdesk_folders.first unless workdesk_folders.empty?
+    
     # No output folder found - create one at parent category level
     output_folder = File.join(parent_dir, "!0UT.3OX")
     FileUtils.mkdir_p(output_folder)
