@@ -247,82 +247,59 @@ def log_operation(operation, status, details = "")
   File.open(log_file, "a") { |f| f.write(log_entry) }
 end
 
-def find_output_folder
-  """
-  Dynamic output folder discovery (NEVER writes inside .3ox)
+def find_or_create_output_folder
+  """Find or create sibling !0UT.3OX folder at parent level (NEVER inside .3ox)"""
   
-  Strategy:
-  1. Check routes.json for explicit route
-  2. Search up directory tree for existing !0UT.3OX* or 0UT.3OX* folders
-  3. Create !0UT.3OX at parent level if none found
+  # Get parent folder (one level above .3ox)
+  dot3ox_dir = File.dirname(File.expand_path(__FILE__))  # Path to .3ox directory
+  parent_dir = File.dirname(dot3ox_dir)  # Go up to parent (e.g., (CAT.0) ADMIN)
   
-  This ensures receipts go to proper output locations in any stratos setup.
-  """
+  # Go up TWO levels to find top-level output folder
+  # (CAT.0) ADMIN/.3ox → (CAT.0) ADMIN → !CITADEL.WORKDESK → look for !0UT.3OX*
+  grandparent_dir = File.dirname(parent_dir)
   
-  # Get .3ox directory path
-  dot3ox_dir = File.dirname(File.expand_path(__FILE__))
-  parent_dir = File.dirname(dot3ox_dir)
+  # Search for existing output folders with various naming patterns
+  # Matches: !0UT.3OX*, 0UT.3OX*, !OUT.3OX*, 0ut.3ox* (case-insensitive)
+  search_patterns = [
+    File.join(grandparent_dir, "!0UT.3OX*"),
+    File.join(grandparent_dir, "0UT.3OX*"),
+    File.join(grandparent_dir, "!0ut.3ox*"),
+    File.join(grandparent_dir, "0ut.3ox*")
+  ]
   
-  # Search parent and grandparent levels for output folders
-  [parent_dir, File.dirname(parent_dir)].each do |search_dir|
-    # Match various output folder patterns (case-insensitive)
-    patterns = [
-      File.join(search_dir, "!0UT.3OX*"),
-      File.join(search_dir, "0UT.3OX*"),
-      File.join(search_dir, "!0ut.3ox*"),
-      File.join(search_dir, "0ut.3ox*")
-    ]
-    
-    out_folders = patterns.flat_map { |p| Dir.glob(p, File::FNM_CASEFOLD) }.uniq
-    return out_folders.first unless out_folders.empty?
+  out_folders = search_patterns.flat_map { |pattern| Dir.glob(pattern, File::FNM_CASEFOLD) }.uniq
+  
+  if out_folders.empty?
+    # No output folder found - create one at parent category level
+    output_folder = File.join(parent_dir, "!0UT.3OX")
+    FileUtils.mkdir_p(output_folder)
+    puts "✓ Created output folder: #{output_folder}" if ENV['DEBUG']
+    return output_folder
   end
   
-  # No output folder found - create at parent level
-  output_folder = File.join(parent_dir, "!0UT.3OX")
-  FileUtils.mkdir_p(output_folder)
-  output_folder
+  # Use first existing output folder
+  out_folders.first
 end
 
-def route_output(operation, receipt)
-  routes = load_routes
-  
-  # Use explicit route if defined, otherwise use dynamic discovery
-  destination = routes[operation] || find_output_folder
-  
-  # Ensure receipts/ subfolder exists
-  receipts_dir = File.join(destination, "receipts")
-  FileUtils.mkdir_p(receipts_dir)
-  
-  # Write receipt to receipts/ subfolder
-  receipt_file = File.join(receipts_dir, "receipt_#{Time.now.strftime('%Y%m%d_%H%M%S')}.log")
-  File.open(receipt_file, "w") do |f|
-    f.puts "Operation: #{receipt[:operation]}"
-    f.puts "File: #{receipt[:file]}"
-    f.puts "Hash: #{receipt[:hash]}"
-    f.puts "Time: #{receipt[:timestamp]}"
-    f.puts "Routed to: #{destination}"
-  end
-  
-  destination
-end
-
-def generate_receipt(filepath, operation)
+def validate_and_log(filepath, operation)
+  """
+  Validate file and log to 3ox.log (NO receipt spam)
+  Only generates actual receipt files for file movement operations
+  """
   result = validate_file(filepath)
   return result unless result[:valid]
   
-  receipt = {
+  # Just log to 3ox.log with hash
+  log_operation(operation, "COMPLETE", "File: #{filepath}, Hash: #{result[:hash]}")
+  
+  {
+    valid: true,
     file: filepath,
     operation: operation,
     hash: result[:hash],
     timestamp: Time.now.iso8601,
     status: "COMPLETE"
   }
-  
-  # Route to destination (automatically finds output folder)
-  destination = route_output(operation, receipt)
-  receipt[:routed_to] = destination
-  
-  receipt
 end
 
 def run_test(operation = "knowledge_update")
@@ -350,22 +327,17 @@ def run_test(operation = "knowledge_update")
   puts "✓ Hash: #{result[:hash]}"
   puts "✓ Size: #{result[:size]} bytes"
   
-  # Generate receipt with custom operation
-  receipt = generate_receipt(__FILE__, operation)
-  puts "\n✓ Receipt: #{receipt[:status]}"
+  # Validate and log (NO receipt spam)
+  validated = validate_and_log(__FILE__, operation)
+  puts "\n✓ Status: #{validated[:status]}"
   puts "✓ Operation: #{operation}"
-  puts "✓ Logged to: 0ut.3ox/receipts.log"
-  puts "✓ Routed to: #{receipt[:routed_to]}"
-  
-  # Log to 3ox.log
-  log_operation(operation, "COMPLETE", "Hash: #{result[:hash]}, Routed to: #{receipt[:routed_to]}")
-  puts "✓ Operation logged to: 3ox.log"
+  puts "✓ Logged to: 3ox.log"
   
   puts "\n" + "=" * 60
   puts "TEST COMPLETE"
   puts "=" * 60
   
-  receipt
+  validated
 end
 
 # ============================================================================
