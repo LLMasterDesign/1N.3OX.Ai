@@ -247,15 +247,54 @@ def log_operation(operation, status, details = "")
   File.open(log_file, "a") { |f| f.write(log_entry) }
 end
 
+def find_output_folder
+  """
+  Dynamic output folder discovery (NEVER writes inside .3ox)
+  
+  Strategy:
+  1. Check routes.json for explicit route
+  2. Search up directory tree for existing !0UT.3OX* or 0UT.3OX* folders
+  3. Create !0UT.3OX at parent level if none found
+  
+  This ensures receipts go to proper output locations in any stratos setup.
+  """
+  
+  # Get .3ox directory path
+  dot3ox_dir = File.dirname(File.expand_path(__FILE__))
+  parent_dir = File.dirname(dot3ox_dir)
+  
+  # Search parent and grandparent levels for output folders
+  [parent_dir, File.dirname(parent_dir)].each do |search_dir|
+    # Match various output folder patterns (case-insensitive)
+    patterns = [
+      File.join(search_dir, "!0UT.3OX*"),
+      File.join(search_dir, "0UT.3OX*"),
+      File.join(search_dir, "!0ut.3ox*"),
+      File.join(search_dir, "0ut.3ox*")
+    ]
+    
+    out_folders = patterns.flat_map { |p| Dir.glob(p, File::FNM_CASEFOLD) }.uniq
+    return out_folders.first unless out_folders.empty?
+  end
+  
+  # No output folder found - create at parent level
+  output_folder = File.join(parent_dir, "!0UT.3OX")
+  FileUtils.mkdir_p(output_folder)
+  output_folder
+end
+
 def route_output(operation, receipt)
   routes = load_routes
-  destination = routes[operation] || "0ut.3ox"
   
-  # Create destination directory
-  FileUtils.mkdir_p(destination)
+  # Use explicit route if defined, otherwise use dynamic discovery
+  destination = routes[operation] || find_output_folder
   
-  # Write receipt to destination
-  receipt_file = File.join(destination, "receipt_#{Time.now.strftime('%Y%m%d_%H%M%S')}.log")
+  # Ensure receipts/ subfolder exists
+  receipts_dir = File.join(destination, "receipts")
+  FileUtils.mkdir_p(receipts_dir)
+  
+  # Write receipt to receipts/ subfolder
+  receipt_file = File.join(receipts_dir, "receipt_#{Time.now.strftime('%Y%m%d_%H%M%S')}.log")
   File.open(receipt_file, "w") do |f|
     f.puts "Operation: #{receipt[:operation]}"
     f.puts "File: #{receipt[:file]}"
@@ -279,13 +318,7 @@ def generate_receipt(filepath, operation)
     status: "COMPLETE"
   }
   
-  # Log to receipt file
-  FileUtils.mkdir_p("0ut.3ox")
-  File.open("0ut.3ox/receipts.log", "a") do |f|
-    f.puts "[#{receipt[:timestamp]}] #{operation} | #{filepath} | #{receipt[:hash]}"
-  end
-  
-  # Route to destination
+  # Route to destination (automatically finds output folder)
   destination = route_output(operation, receipt)
   receipt[:routed_to] = destination
   
