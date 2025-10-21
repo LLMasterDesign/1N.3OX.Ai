@@ -1,5 +1,5 @@
 """
-Unit Tests for Street Banner Agent System
+Unit Tests for Sunsetglow Banner Agent System
 
 Tests for research, design, and preview modules with edge case handling.
 """
@@ -12,9 +12,9 @@ from PIL import Image
 import pandas as pd
 
 # Import modules
-from banner_cost_research import BannerCostResearch
-from sunsetglow_banner_design import SunsetGlowDesigner
-from banner_preview import BannerPreview
+from sunsetglow.banner_cost_research import BannerCostResearch
+from sunsetglow.banner_design import SunsetGlowDesigner
+from sunsetglow.banner_preview import BannerPreview
 
 
 class TestBannerCostResearch(unittest.TestCase):
@@ -467,7 +467,7 @@ class TestIntegration(unittest.TestCase):
 def run_test_suite():
     """Run the complete test suite with detailed output."""
     print("=" * 60)
-    print("Street Banner Agent - Test Suite")
+    print("Sunsetglow Banner Agent - Test Suite")
     print("=" * 60)
     
     # Create test suite

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Quick Demo Script for Street Banner Agent
+Quick Demo Script for Sunsetglow Banner Agent
 
 This script demonstrates the capabilities of the banner agent system
 without generating large output files.
 """
 
-from banner_cost_research import BannerCostResearch
-from sunsetglow_banner_design import SunsetGlowDesigner
-from banner_preview import BannerPreview
+from sunsetglow.banner_cost_research import BannerCostResearch
+from sunsetglow.banner_design import SunsetGlowDesigner
+from sunsetglow.banner_preview import BannerPreview
 from PIL import Image
 
 
@@ -117,9 +117,9 @@ def demo_workflow():
 
 def main():
     """Run all demos."""
-    print("\n" + "🎨" * 30)
-    print("STREET BANNER AGENT - QUICK DEMO")
-    print("🎨" * 30)
+    print("\n" + "🌅" * 30)
+    print("SUNSETGLOW BANNER AGENT - QUICK DEMO")
+    print("🌅" * 30)
     
     print("\nThis demo showcases the capabilities of each module")
     print("without generating large output files.\n")
@@ -135,15 +135,15 @@ def main():
     print("=" * 60)
     
     print("\n📚 To run full workflow with output generation:")
-    print("   python3 banner_agent.py")
+    print("   python3 -m sunsetglow.agent")
     
     print("\n📚 To run individual modules:")
-    print("   python3 banner_cost_research.py")
-    print("   python3 sunsetglow_banner_design.py")
-    print("   python3 banner_preview.py")
+    print("   python3 -m sunsetglow.banner_cost_research")
+    print("   python3 -m sunsetglow.banner_design")
+    print("   python3 -m sunsetglow.banner_preview")
     
     print("\n🧪 To run tests:")
-    print("   python3 test_banner_agent.py")
+    print("   python3 test_sunsetglow.py")
     
     print("\n:: ∎")
 

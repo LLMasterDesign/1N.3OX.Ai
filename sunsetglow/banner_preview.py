@@ -355,7 +355,7 @@ def main():
     
     # Import design module to get sample banner
     try:
-        from sunsetglow_banner_design import SunsetGlowDesigner
+        from .banner_design import SunsetGlowDesigner
         
         # Create sample designs
         print("\n🎨 Creating sample banner designs...")
