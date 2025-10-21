@@ -1,4 +1,4 @@
-# Street Banner Agent - Quick Setup Guide
+# Sunsetglow Banner Agent - Quick Setup Guide
 
 ## 🚀 Quick Start (3 Steps)
 
@@ -14,41 +14,43 @@ python3 demo.py
 
 ### Step 3: Run Complete Workflow
 ```bash
-python3 banner_agent.py
+python3 -m sunsetglow.agent
 ```
 
 ## 📋 What Each File Does
 
-### Core Modules
-- **`banner_agent.py`** - Main orchestrator that runs complete workflow
+### Core Package (sunsetglow/)
+- **`__init__.py`** - Package initialization and exports
+- **`agent.py`** - Main orchestrator that runs complete workflow
 - **`banner_cost_research.py`** - Pricing research and vendor analysis
-- **`sunsetglow_banner_design.py`** - Design generation with Sunset Glow palette
+- **`banner_design.py`** - Design generation with Sunsetglow palette
 - **`banner_preview.py`** - Mockup creation and multi-format export
 
 ### Supporting Files
-- **`test_banner_agent.py`** - Comprehensive test suite (35 tests)
+- **`test_sunsetglow.py`** - Comprehensive test suite (35 tests)
 - **`demo.py`** - Quick demo without large file generation
 - **`requirements.txt`** - Python dependencies
 - **`README.md`** - Complete documentation
 - **`SETUP_GUIDE.md`** - This file
+- **`PROJECT_SUMMARY.md`** - Executive summary
 
 ## 🎯 Common Usage Patterns
 
 ### Just Want Pricing Research?
 ```bash
-python3 banner_cost_research.py
+python3 -m sunsetglow.banner_cost_research
 ```
 Output: `banner_research_data.csv`, `pricing_summary.json`
 
 ### Just Want a Design?
 ```bash
-python3 sunsetglow_banner_design.py
+python3 -m sunsetglow.banner_design
 ```
 Output: Multiple PNG designs + CMYK TIFF + SVG
 
 ### Want Everything?
 ```bash
-python3 banner_agent.py
+python3 -m sunsetglow.agent
 ```
 Output: Complete project folder with all assets
 
@@ -56,7 +58,7 @@ Output: Complete project folder with all assets
 
 Run all 35 tests:
 ```bash
-python3 test_banner_agent.py
+python3 test_sunsetglow.py
 ```
 
 Expected result: ✅ All 35 tests passing
@@ -87,7 +89,7 @@ All required packages are in `requirements.txt`:
 
 ### Change Banner Size
 ```python
-from sunsetglow_banner_design import SunsetGlowDesigner
+from sunsetglow import SunsetGlowDesigner
 
 # Options: "3x10ft", "4x12ft", "2x8ft", "5x15ft"
 designer = SunsetGlowDesigner(size="4x12ft")
@@ -95,7 +97,7 @@ designer = SunsetGlowDesigner(size="4x12ft")
 
 ### Change Budget
 ```python
-from banner_agent import BannerAgent
+from sunsetglow import BannerAgent
 
 agent = BannerAgent(project_name="my_project")
 agent.run_complete_workflow(budget=500, size="4x12ft")
@@ -132,11 +134,11 @@ Before asking for help:
 
 **Beginner:**
 1. Run `demo.py` to see capabilities
-2. Run `banner_cost_research.py` individually
+2. Run `python3 -m sunsetglow.banner_cost_research` individually
 3. Review output CSV and JSON files
 
 **Intermediate:**
-1. Run complete workflow with `banner_agent.py`
+1. Run complete workflow with `python3 -m sunsetglow.agent`
 2. Examine generated designs
 3. Review project report
 
@@ -148,7 +150,7 @@ Before asking for help:
 
 ## 📄 File Outputs Reference
 
-After running `banner_agent.py`, expect these files in `[project]_output/`:
+After running `python3 -m sunsetglow.agent`, expect these files in `[project]_output/`:
 
 ```
 [project]_output/
@@ -176,7 +178,7 @@ After running `banner_agent.py`, expect these files in `[project]_output/`:
 
 ## 🔐 Best Practices
 
-1. **Always run tests before production:** `python3 test_banner_agent.py`
+1. **Always run tests before production:** `python3 test_sunsetglow.py`
 2. **Check pricing before design:** Get budget first from research module
 3. **Use CMYK TIFF for printing:** Not PNG or JPEG
 4. **Keep SVG for size variations:** Vector scales perfectly

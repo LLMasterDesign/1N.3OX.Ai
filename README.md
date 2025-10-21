@@ -1,6 +1,9 @@
-# Street Banner Research & Design Agent
+# Sunsetglow Banner Agent
 
 A comprehensive multi-stage AI agent system for street banner market research and conceptual design generation, built for Cursor AI.
+
+**Brand:** Sunsetglow  
+**Version:** 1.0.0
 
 ## 🎯 Overview
 
@@ -12,7 +15,7 @@ This modular agent system provides end-to-end banner solutions:
 
 ## 🏗️ Component Architecture
 
-### 1. Research Module (`banner_cost_research.py`)
+### 1. Research Module (`sunsetglow/banner_cost_research.py`)
 - Web scraping capabilities for vendor pricing
 - Data collection for multiple banner sizes and materials
 - Statistical analysis and price comparisons
@@ -24,9 +27,9 @@ This modular agent system provides end-to-end banner solutions:
 - Price tracking: $150 - $1200 range
 - Export to CSV and JSON
 
-### 2. Design Module (`sunsetglow_banner_design.py`)
+### 2. Design Module (`sunsetglow/banner_design.py`)
 - Print-ready design generation at 300 DPI
-- Sunset Glow color palette implementation
+- Sunsetglow color palette implementation
 - Multiple design styles (gradient, split, geometric)
 - CMYK conversion for professional printing
 
@@ -38,13 +41,13 @@ This modular agent system provides end-to-end banner solutions:
 - **Color Mode:** RGB working / CMYK for print
 - **Output Formats:** PNG, TIFF (CMYK), SVG
 
-### 3. Preview Module (`banner_preview.py`)
+### 3. Preview Module (`sunsetglow/banner_preview.py`)
 - Realistic contextual mockups (street scenes, building facades)
 - Thumbnail generation
 - Multi-format export (PNG, JPEG, PDF)
 - Design comparison sheets
 
-### 4. Main Orchestrator (`banner_agent.py`)
+### 4. Main Orchestrator (`sunsetglow/agent.py`)
 - Coordinates all modules in unified workflow
 - Automated report generation
 - Project organization and file management
@@ -77,7 +80,7 @@ pip install -r requirements.txt
 ### Quick Start - Complete Workflow
 
 ```python
-from banner_agent import BannerAgent
+from sunsetglow import BannerAgent
 
 # Create agent instance
 agent = BannerAgent(project_name="my_banner_project")
@@ -94,7 +97,7 @@ results = agent.run_complete_workflow(
 
 #### Research Module
 ```python
-from banner_cost_research import BannerCostResearch
+from sunsetglow import BannerCostResearch
 
 research = BannerCostResearch()
 research.simulate_vendor_research()
@@ -112,7 +115,7 @@ research.export_summary_json("summary.json")
 
 #### Design Module
 ```python
-from sunsetglow_banner_design import SunsetGlowDesigner
+from sunsetglow import SunsetGlowDesigner
 
 designer = SunsetGlowDesigner(size="3x10ft")
 
@@ -127,7 +130,7 @@ designer.create_svg_design("banner_vector.svg", text="EVENT NAME")
 
 #### Preview Module
 ```python
-from banner_preview import BannerPreview
+from sunsetglow import BannerPreview
 
 preview = BannerPreview()
 
@@ -144,10 +147,10 @@ Run the comprehensive test suite:
 
 ```bash
 # Run all tests
-python test_banner_agent.py
+python3 test_sunsetglow.py
 
 # Or use pytest
-pytest test_banner_agent.py -v
+pytest test_sunsetglow.py -v
 ```
 
 **Test Coverage:**
@@ -213,33 +216,38 @@ The system handles:
 
 ### Run Complete Workflow
 ```bash
-python banner_agent.py
+python3 -m sunsetglow.agent
 ```
 
 ### Run Individual Modules
 ```bash
 # Research only
-python banner_cost_research.py
+python3 -m sunsetglow.banner_cost_research
 
 # Design only
-python sunsetglow_banner_design.py
+python3 -m sunsetglow.banner_design
 
 # Preview only
-python banner_preview.py
+python3 -m sunsetglow.banner_preview
 ```
 
 ## 📋 Project Structure
 
 ```
 /workspace/
-├── banner_agent.py                 # Main orchestrator
-├── banner_cost_research.py         # Research module
-├── sunsetglow_banner_design.py     # Design module
-├── banner_preview.py               # Preview module
-├── test_banner_agent.py            # Test suite
-├── requirements.txt                # Dependencies
-├── README.md                       # Documentation
-└── [project]_output/              # Generated outputs
+├── sunsetglow/                    # Main package
+│   ├── __init__.py               # Package initialization
+│   ├── agent.py                  # Main orchestrator
+│   ├── banner_cost_research.py   # Research module
+│   ├── banner_design.py          # Design module
+│   └── banner_preview.py         # Preview module
+├── test_sunsetglow.py            # Test suite
+├── demo.py                       # Quick demo script
+├── requirements.txt              # Dependencies
+├── README.md                     # Documentation
+├── SETUP_GUIDE.md               # Quick start guide
+├── PROJECT_SUMMARY.md           # Executive summary
+└── [project]_output/            # Generated outputs
     ├── design_*.png
     ├── mockup_*.png
     ├── pricing_data.csv
@@ -314,6 +322,6 @@ For issues or questions:
 
 ---
 
-**Built with Cursor AI | Designed for Print Excellence**
+**Built with Cursor AI | Sunsetglow Brand | Designed for Print Excellence**
 
 :: ∎
