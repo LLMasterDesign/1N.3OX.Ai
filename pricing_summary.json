@@ -1,0 +1,80 @@
+{
+  "overall": {
+    "min_price": 214.0,
+    "max_price": 500.0,
+    "avg_price": 339.25,
+    "median_price": 325.0
+  },
+  "by_size": {
+    "3x10ft": {
+      "min": 214.0,
+      "max": 500.0,
+      "avg": 304.8,
+      "count": 5
+    },
+    "4x12ft": {
+      "min": 355.0,
+      "max": 425.0,
+      "avg": 396.6666666666667,
+      "count": 3
+    }
+  },
+  "by_material": {
+    "vinyl": {
+      "min": 214.0,
+      "max": 410.0,
+      "avg": 298.0,
+      "count": 3
+    },
+    "mesh": {
+      "min": 245.0,
+      "max": 355.0,
+      "avg": 300.0,
+      "count": 2
+    },
+    "polyester": {
+      "min": 295.0,
+      "max": 425.0,
+      "avg": 360.0,
+      "count": 2
+    },
+    "canvas": {
+      "min": 500.0,
+      "max": 500.0,
+      "avg": 500.0,
+      "count": 1
+    }
+  },
+  "by_vendor": {
+    "PrintBanners.com": {
+      "min": 270.0,
+      "max": 410.0,
+      "avg": 340.0,
+      "product_count": 2
+    },
+    "LocalSignShop": {
+      "min": 245.0,
+      "max": 245.0,
+      "avg": 245.0,
+      "product_count": 1
+    },
+    "EventBannersUSA": {
+      "min": 295.0,
+      "max": 425.0,
+      "avg": 360.0,
+      "product_count": 2
+    },
+    "QuickPrintOnline": {
+      "min": 214.0,
+      "max": 355.0,
+      "avg": 284.5,
+      "product_count": 2
+    },
+    "PremiumBanners": {
+      "min": 500.0,
+      "max": 500.0,
+      "avg": 500.0,
+      "product_count": 1
+    }
+  }
+}

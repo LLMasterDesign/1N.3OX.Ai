@@ -1,259 +1,319 @@
-# 1N.3OX.Ai - 3OX Architecture
-**Modular AI Agent System with Event-Driven Routing**
+# Street Banner Research & Design Agent
 
----
+A comprehensive multi-stage AI agent system for street banner market research and conceptual design generation, built for Cursor AI.
 
-## What is 3OX Architecture?
+## 🎯 Overview
 
-A **layered, event-driven AI agent system** with clear separation of concerns:
+This modular agent system provides end-to-end banner solutions:
 
-```
-┌─────────────────────────────────────────────┐
-│             1n3ox (Input)                   │
-│  Piezoelectric monitoring & routing         │
-│  - ONE per ops/base                         │
-│  - Monitors incoming files                  │
-│  - Ticket-based routing                     │
-│  - Files move only when complete/error      │
-│  └── 0ut3ox nested (receipts/logs/requests)│
-└──────────────────┬──────────────────────────┘
-                   │
-                   ↓
-┌─────────────────────────────────────────────┐
-│            cat.3ox (Middleware)             │
-│  Category orchestration                     │
-│  - 5-8 category folders                     │
-│  - Half .3ox persona, half 1n3ox routing    │
-│  - Has own 1n3ox, NO 0ut3ox                 │
-└──────────────────┬──────────────────────────┘
-                   │
-                   ↓
-┌─────────────────────────────────────────────┐
-│              .3ox (Runtime)                 │
-│  Core agent execution                       │
-│  - CORE.3ox (Python - free)                 │
-│  - RAW.3ox (Ruby - commercial)              │
-│  - Brain + Spine + Legs                     │
-└─────────────────────────────────────────────┘
-```
+1. **Market Research** - Automated pricing data collection and analysis
+2. **Design Generation** - Print-ready banner designs with Sunset Glow palette
+3. **Visualization** - Realistic mockups and multi-format exports
 
-**Key Principle:** Each layer is separate - no mixing, no confusion.
+## 🏗️ Component Architecture
 
----
+### 1. Research Module (`banner_cost_research.py`)
+- Web scraping capabilities for vendor pricing
+- Data collection for multiple banner sizes and materials
+- Statistical analysis and price comparisons
+- Budget-based vendor recommendations
 
-## Repository Structure
+**Features:**
+- Banner sizes: 3x10ft, 4x12ft, 2x8ft, 5x15ft
+- Materials: vinyl, mesh, polyester, canvas
+- Price tracking: $150 - $1200 range
+- Export to CSV and JSON
 
-### Branch: `1n3ox`
-**Input Layer + Output**
-- Piezoelectric file monitoring
-- Ticket routing system
-- Station availability tracking
-- Nested: 0ut3ox (receipts, logs, requests)
+### 2. Design Module (`sunsetglow_banner_design.py`)
+- Print-ready design generation at 300 DPI
+- Sunset Glow color palette implementation
+- Multiple design styles (gradient, split, geometric)
+- CMYK conversion for professional printing
 
-**Usage:** ONE per ops/base (singleton pattern)  
-**Status:** Ready for implementation
+**Design Specifications:**
+- **Color Palette:**
+  - Grey-Blue: RGB(90, 120, 140) - bottom half
+  - Orange: RGB(255, 140, 50) - highlights
+- **Resolution:** 300 DPI
+- **Color Mode:** RGB working / CMYK for print
+- **Output Formats:** PNG, TIFF (CMYK), SVG
 
-### Branch: `cat3ox`
-**Category Middleware**
-- 5-8 category folders
-- Smart routing logic
-- Half persona, half routing
-- Has own 1n3ox (no 0ut3ox)
+### 3. Preview Module (`banner_preview.py`)
+- Realistic contextual mockups (street scenes, building facades)
+- Thumbnail generation
+- Multi-format export (PNG, JPEG, PDF)
+- Design comparison sheets
 
-**Usage:** Orchestrates between input and runtime  
-**Status:** Ready for implementation
+### 4. Main Orchestrator (`banner_agent.py`)
+- Coordinates all modules in unified workflow
+- Automated report generation
+- Project organization and file management
 
-### Branch: `core-runtime`
-**.3ox Agent Runtime**
-- CORE.3ox (Python) - Free for testing
-- RAW.3ox (Ruby) - Commercial with licensing
-- Pre-flight checks, validation, compliance
+## 📦 Installation
 
-**Usage:** The actual agent execution layer  
-**Status:** ✅ Production ready
+### Requirements
+- Python 3.8+
+- pip package manager
 
-### Branch: `3ox-sets`
-**SaaS Platform**
-- Next.js web application
-- Landing page, pricing, features
-- User authentication
-- Business/monetization strategy
+### Setup
 
-**Usage:** Web interface for 3OX products  
-**Status:** ✅ Platform ready
-
-### Branch: `experiments`
-**Testing & Experiments**
-- Proof of concepts
-- Performance testing
-- Feature experiments
-- Not production code
-
-**Usage:** R&D and validation  
-**Status:** Open for experiments
-
----
-
-## Quick Start
-
-### Get the Full System
 ```bash
-# Clone everything
-git clone https://github.com/LLMasterDesign/1N.3OX.Ai.git
-cd 1N.3OX.Ai
+# Clone or navigate to project directory
+cd /workspace
 
-# Setup each layer
-git checkout 1n3ox         # Input/output layer
-git checkout cat3ox        # Middleware  
-git checkout core-runtime  # Agent runtime
-git checkout 3ox-sets      # SaaS platform
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-### Get Just What You Need
+### Dependencies
+- `requests` - HTTP requests for web scraping
+- `beautifulsoup4` - HTML parsing
+- `pandas` - Data analysis
+- `Pillow` - Image processing
+- `svgwrite` - Vector graphics generation
+
+## 🚀 Usage
+
+### Quick Start - Complete Workflow
+
+```python
+from banner_agent import BannerAgent
+
+# Create agent instance
+agent = BannerAgent(project_name="my_banner_project")
+
+# Run complete workflow
+results = agent.run_complete_workflow(
+    budget=400,
+    size="3x10ft",
+    text="YOUR BANNER TEXT"
+)
+```
+
+### Individual Module Usage
+
+#### Research Module
+```python
+from banner_cost_research import BannerCostResearch
+
+research = BannerCostResearch()
+research.simulate_vendor_research()
+
+# Get pricing summary
+summary = research.get_price_summary()
+
+# Get recommendations
+recommendations = research.get_recommendations(budget=300, size="3x10ft")
+
+# Export data
+research.export_research_data("pricing.csv")
+research.export_summary_json("summary.json")
+```
+
+#### Design Module
+```python
+from sunsetglow_banner_design import SunsetGlowDesigner
+
+designer = SunsetGlowDesigner(size="3x10ft")
+
+# Create design
+banner = designer.create_design(text="EVENT NAME", style="gradient")
+
+# Export in various formats
+designer.export_png(banner, "banner_design.png")
+designer.export_cmyk_tiff(banner, "banner_print.tif")
+designer.create_svg_design("banner_vector.svg", text="EVENT NAME")
+```
+
+#### Preview Module
+```python
+from banner_preview import BannerPreview
+
+preview = BannerPreview()
+
+# Create mockup
+mockup = preview.create_mockup_context(banner, context_type="street")
+
+# Export all formats
+preview.export_all_formats(mockup, "banner_mockup")
+```
+
+## 🧪 Testing
+
+Run the comprehensive test suite:
+
 ```bash
-# Just the runtime (most common)
-git clone -b core-runtime https://github.com/LLMasterDesign/1N.3OX.Ai.git
+# Run all tests
+python test_banner_agent.py
 
-# Just the SaaS platform
-git clone -b 3ox-sets https://github.com/LLMasterDesign/1N.3OX.Ai.git
-
-# Just input layer
-git clone -b 1n3ox https://github.com/LLMasterDesign/1N.3OX.Ai.git
+# Or use pytest
+pytest test_banner_agent.py -v
 ```
 
----
+**Test Coverage:**
+- ✅ Research module accuracy
+- ✅ Design validation against print standards
+- ✅ Price range cross-referencing
+- ✅ Color accuracy verification
+- ✅ Export format validation
+- ✅ Edge case handling
 
-## Architecture Principles
+## 📊 Output Files
 
-1. **Separation of Layers**
-   - Each layer has clear boundaries
-   - No cross-contamination
-   - Modular replacement
+After running the agent, you'll find these files in the output directory:
 
-2. **Singleton Pattern (1n3ox)**
-   - ONE input monitor per ops/base
-   - Prevents routing conflicts
-   - Central ticket system
+### Design Files
+- `design_gradient.png` - Gradient style design (300 DPI)
+- `design_split.png` - Split color design (300 DPI)
+- `design_geometric.png` - Geometric pattern design (300 DPI)
+- `design_print_ready.tif` - **CMYK TIFF for printing**
+- `design_vector.svg` - Scalable vector graphic
 
-3. **Scalable Output (0ut3ox)**
-   - MANY output collectors
-   - All connected to 1n3ox
-   - Receipts, logs, requests separate
+### Mockup Files
+- `mockup_street.[png/jpg/pdf]` - Street scene visualization
+- `mockup_building.[png/jpg/pdf]` - Building facade visualization
+- Thumbnails for web preview
 
-4. **Smart Middleware (cat.3ox)**
-   - Knows what belongs where
-   - Orchestrates routing
-   - Half persona (smart), half router (efficient)
+### Data Files
+- `pricing_data.csv` - Complete vendor pricing data
+- `pricing_summary.json` - Statistical analysis summary
+- `design_specifications.json` - Print specifications
+- `design_comparison.png` - Side-by-side design comparison
+- `project_report.txt` - Complete project summary
 
-5. **Runtime Independence (.3ox)**
-   - Executes without knowing about layers above
-   - Portable, testable
-   - Free (Python) and Commercial (Ruby) versions
+## 🎨 Design Specifications
 
----
+### Print-Ready Standards
+- **Resolution:** 300 DPI minimum
+- **Color Mode:** CMYK (converted from RGB)
+- **Bleed:** 2 inches recommended
+- **Finishing:** Hemmed edges with grommets
 
-## Use Cases
+### Color Accuracy
+All colors are specified in both RGB (for digital) and CMYK (for print):
+- Grey-Blue: RGB(90,120,140) / CMYK(36,14,0,45)
+- Orange: RGB(255,140,50) / CMYK(0,45,80,0)
 
-### Law Firm
+### Recommended Materials
+- **Vinyl** - Durable, weather-resistant
+- **Mesh** - Wind-resistant, outdoor use
+- **Polyester** - Premium quality, vibrant colors
+
+## ⚙️ Edge Case Handling
+
+The system handles:
+- ✅ Regional pricing variations
+- ✅ Incomplete vendor data
+- ✅ Print specification divergences
+- ✅ Network timeouts during scraping
+- ✅ Missing fonts (fallback to default)
+- ✅ Budget constraints (alternative recommendations)
+
+## 🔧 Command Line Usage
+
+### Run Complete Workflow
+```bash
+python banner_agent.py
 ```
-1n3ox → monitors: incoming contracts
-cat.3ox → routes to: LEGAL category
-.3ox → executes: surgical contract editing
-0ut3ox → logs: compliance receipts
+
+### Run Individual Modules
+```bash
+# Research only
+python banner_cost_research.py
+
+# Design only
+python sunsetglow_banner_design.py
+
+# Preview only
+python banner_preview.py
 ```
 
-### Healthcare
+## 📋 Project Structure
+
 ```
-1n3ox → monitors: patient records
-cat.3ox → routes to: MEDICAL category
-.3ox → executes: HIPAA-compliant ops
-0ut3ox → logs: PHI access audit trail
+/workspace/
+├── banner_agent.py                 # Main orchestrator
+├── banner_cost_research.py         # Research module
+├── sunsetglow_banner_design.py     # Design module
+├── banner_preview.py               # Preview module
+├── test_banner_agent.py            # Test suite
+├── requirements.txt                # Dependencies
+├── README.md                       # Documentation
+└── [project]_output/              # Generated outputs
+    ├── design_*.png
+    ├── mockup_*.png
+    ├── pricing_data.csv
+    └── project_report.txt
 ```
 
-### Development
-```
-1n3ox → monitors: code changes
-cat.3ox → routes to: appropriate base
-.3ox → executes: validation
-0ut3ox → logs: test results
-```
+## 🚦 Workflow Stages
+
+### Stage 1: Research Phase
+1. Collect vendor pricing data
+2. Analyze price ranges by size/material
+3. Generate statistical summaries
+4. Export research data
+
+### Stage 2: Design Phase
+1. Initialize designer with specifications
+2. Generate multiple design variations
+3. Create print-ready CMYK files
+4. Export vector graphics
+5. Save design specifications
+
+### Stage 3: Preview Phase
+1. Create realistic mockups
+2. Generate comparison sheets
+3. Export in multiple formats
+4. Create thumbnails for web
+
+### Stage 4: Reporting
+1. Compile all results
+2. Generate comprehensive report
+3. Organize output files
+
+## 💡 Tips for Best Results
+
+1. **Budget Planning:** Run research first to understand market pricing
+2. **Material Selection:** Check recommendations based on use case
+3. **Print Submission:** Use the `design_print_ready.tif` CMYK file
+4. **Client Approval:** Show mockups and comparison sheets
+5. **Vector Backup:** Keep the SVG file for future size variations
+
+## 🔍 Troubleshooting
+
+**Issue:** Fonts not found
+- **Solution:** System uses fallback fonts automatically
+
+**Issue:** Web scraping timeout
+- **Solution:** Module includes simulated data as fallback
+
+**Issue:** Color not accurate
+- **Solution:** Use CMYK file with professional printer
+
+**Issue:** File size too large
+- **Solution:** Use JPEG exports for web, TIFF for print only
+
+## 📄 License
+
+This project is designed for use with Cursor AI agent workflows.
+
+## 🤝 Contributing
+
+This is a modular system designed for extension:
+- Add new vendor scrapers to research module
+- Create new design styles in design module
+- Add mockup contexts to preview module
+
+## 📞 Support
+
+For issues or questions:
+1. Check test results: `python test_banner_agent.py`
+2. Review project report in output folder
+3. Verify all dependencies are installed
 
 ---
 
-## Documentation
-
-- **ARCHITECTURE.md** - Deep dive into design
-- **SETUP.md** - Installation guide
-- **COMPARISON.md** - vs traditional approaches
-- **FAQ.md** - Common questions
-
-**Per-Branch Docs:**
-- `1n3ox/README.md` - Input layer specifics
-- `cat3ox/README.md` - Middleware specifics  
-- `core-runtime/README.md` - Runtime specifics
-
----
-
-## Why This Architecture?
-
-**Problem:** AI agents are chaotic
-- Files processed randomly
-- No tracking
-- No validation
-- No compliance
-
-**Solution:** Structured flow
-- ✅ Everything monitored (1n3ox)
-- ✅ Everything categorized (cat.3ox)
-- ✅ Everything validated (.3ox)
-- ✅ Everything logged (0ut3ox)
-
-**Result:** Predictable, auditable, compliant AI operations
-
----
-
-## Contributing
-
-See `experiments` branch for:
-- Testing new features
-- Performance benchmarks
-- Proof of concepts
-
-**Branch Protection:**
-- `main` - Docs only, protected
-- `1n3ox`, `cat3ox`, `core-runtime` - Production code, PR required
-
----
-
-## License
-
-- CORE.3ox (Python) - Free/Open for testing
-- RAW.3ox (Ruby) - Commercial license required
-- Architecture - Open documentation
-
-See individual branches for specific licensing.
-
----
-
-## Status
-
-**Production Ready:**
-- ✅ core-runtime (.3ox agent runtime)
-
-**In Development:**
-- 🚧 1n3ox (input/output layer)
-- 🚧 cat.3ox (category middleware)
-
-**Experimental:**
-- 🧪 experiments (testing branch)
-
----
-
-**Built for:** Developers who need structured AI operations  
-**Perfect for:** Regulated industries, compliance-heavy environments  
-**Works with:** Any AI agent (Cursor, Claude, ChatGPT, custom)
-
-**Version:** v1.1.0  
-**Build:** ⧗-25.291
+**Built with Cursor AI | Designed for Print Excellence**
 
 :: ∎
