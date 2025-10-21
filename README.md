@@ -75,6 +75,18 @@ Your Workspace/
 
 **Customize:** Add your own categories beyond the default 5.
 
+### Domain-Specific Brains
+
+Each CAT can be configured with domain knowledge so it knows what content belongs in its category.
+
+**See `BRAINS/` folder for:**
+- Complete domain specifications (CAT.DOMAINS.md)
+- Example brain configurations for each CAT
+- Instructions for customizing your categories
+
+**Default:** Generic routing brain  
+**Optional:** Domain-specific specialist brains
+
 ---
 
 ## Installation

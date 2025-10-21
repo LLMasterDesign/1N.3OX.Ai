@@ -45,12 +45,12 @@ pub enum Rule {
     BidirectionalLinks,
 }
 
-/// CAT.0 ADMIN - Personal Life Category Router
+/// CAT.3 BUSINESS - Professional & Career Development
 pub const TESTRUN_BRAIN: AgentConfig = AgentConfig {
-    name: "CAT.ROUTER",
+    name: "CAT.3.BUSINESS",
     brain: BrainType::Sentinel,
     model: "claude-sonnet-4.5",
-    instructions: "Personal life category router for CAT.1-5 domains. Routes files to appropriate categories based on content. Validates file integrity using xxHash64. Logs activity to 3ox.log. Orchestrates flow between Self, Education, Business, Family, and Social categories.",
+    instructions: "Business specialist for CAT.3 Business domain. Handles: work projects, career planning, professional development, business ideas, client work, contracts, invoices, business plans, market research, networking contacts, professional goals, industry analysis, work presentations, and career advancement materials. Validates file integrity using xxHash64. Logs activity to 3ox.log.",
     max_turns: 10,
 };
 
