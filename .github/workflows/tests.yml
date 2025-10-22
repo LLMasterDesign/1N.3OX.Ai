@@ -1,0 +1,41 @@
+name: SunsetGlow Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov
+    
+    - name: Run tests
+      run: |
+        python test_sunsetglow.py
+    
+    - name: Test imports
+      run: |
+        python -c "from sunsetglow import BannerAgent, BannerCostResearch, SunsetGlowDesigner, BannerPreview"
+        python -c "import sunsetglow; print(f'SunsetGlow v{sunsetglow.__version__}')"
+    
+    - name: Run demo (dry run)
+      run: |
+        python demo.py

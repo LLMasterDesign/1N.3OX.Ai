@@ -1,0 +1,28 @@
+# Include documentation
+include README.md
+include QUICK_START.md
+include SETUP_GUIDE.md
+include PROJECT_SUMMARY.md
+include MIGRATION_COMPLETE.md
+include REPOSITORY_INFO.md
+include LICENSE
+include requirements.txt
+
+# Include test files
+include test_sunsetglow.py
+
+# Include demo
+include demo.py
+
+# Exclude build artifacts
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude *.so
+global-exclude .DS_Store
+
+# Exclude output files
+global-exclude *.csv
+global-exclude *.png
+global-exclude *.jpg
+global-exclude *.pdf
+global-exclude *.tif

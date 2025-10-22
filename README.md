@@ -1,9 +1,10 @@
-# Sunsetglow Banner Agent
+# SunsetGlow Banner Agent
 
 A comprehensive multi-stage AI agent system for street banner market research and conceptual design generation, built for Cursor AI.
 
-**Brand:** Sunsetglow  
-**Version:** 1.0.0
+**Brand:** SunsetGlow  
+**Version:** 1.0.0  
+**Repository:** https://github.com/LLMasterDesign/SunsetGlow
 
 ## 🎯 Overview
 
