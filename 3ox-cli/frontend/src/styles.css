@@ -1,0 +1,107 @@
+/* 3OX Floating Bar Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+#threeox-container {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#threeox-container input:focus {
+    border-color: #00ff88 !important;
+    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2) !important;
+}
+
+#threeox-container select:focus {
+    border-color: #00ff88 !important;
+    outline: none;
+}
+
+#threeox-container button:hover {
+    background: #444 !important;
+}
+
+#history-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+#history-container::-webkit-scrollbar-track {
+    background: #222;
+}
+
+#history-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
+
+#history-container::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Animation for showing/hiding */
+#threeox-container {
+    transition: all 0.2s ease-in-out;
+}
+
+#threeox-container[style*="display: none"] {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+#threeox-container[style*="display: block"] {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Status indicators */
+.status-info { color: #888; }
+.status-success { color: #00ff88; }
+.status-warning { color: #ffaa00; }
+.status-error { color: #ff4444; }
+
+/* Command suggestions */
+.command-suggestion {
+    padding: 4px 8px;
+    background: #333;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #aaa;
+    margin: 2px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.command-suggestion:hover {
+    background: #444;
+    color: #fff;
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    border-top-color: #00ff88;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    #threeox-container {
+        width: 90vw;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

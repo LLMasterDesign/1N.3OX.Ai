@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  threeox-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./.3ox:/app/.3ox
+      - ~/.3ox:/root/.3ox
+    environment:
+      - PYTHONPATH=/app
+      - THREEOX_ROOT=/app/.3ox
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  threeox-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - threeox-backend
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    restart: unless-stopped
+
+volumes:
+  threeox_data:
+    driver: local
